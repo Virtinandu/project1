@@ -1,72 +1,57 @@
 import streamlit as st
 
 def main():
-    st.set_page_config(
-        page_title="Study Material Website",
-        page_icon=":books:",
-        layout="wide"
-    )
+    st.title("Study Material Website")
 
-    # HTML and CSS for custom styling
-    custom_html = """
-    <style>
-        /* Add custom CSS styles here */
-        .header {
-            background-color: #3366ff;
-            color: white;
-            padding: 20px;
-            text-align: center;
-            font-size: 36px;
-            font-weight: bold;
-            margin-bottom: 30px;
-        }
-        .content {
-            margin: 0 auto;
-            width: 80%;
-        }
-        .material-container {
-            background-color: #f0f0f0;
-            padding: 20px;
-            margin-bottom: 20px;
-            border-radius: 10px;
-        }
-        .material-title {
-            font-size: 24px;
-            font-weight: bold;
-            margin-bottom: 10px;
-        }
-        .material-description {
-            font-size: 16px;
-        }
-    </style>
-    <div class="header">Study Material Website</div>
-    """
+    # Sidebar options
+    st.sidebar.title("Navigation")
+    page = st.sidebar.selectbox("Select a page", ["Home", "Subjects", "About"])
 
-    st.markdown(custom_html, unsafe_allow_html=True)
+    if page == "Home":
+        display_home_page()
+    elif page == "Subjects":
+        display_subjects_page()
+    elif page == "About":
+        display_about_page()
 
-    # Main content
-    st.markdown("<div class='content'>", unsafe_allow_html=True)
+def display_home_page():
+    st.header("Welcome to our Study Material Website")
+    st.write("This website provides study material for various subjects.")
 
-    # Sample study materials
-    study_materials = [
-        {"title": "Introduction to Python", "description": "Python basics and fundamentals."},
-        {"title": "Machine Learning 101", "description": "Introduction to machine learning concepts."},
-        {"title": "Web Development with Flask", "description": "Building web applications with Flask."},
-    ]
+def display_subjects_page():
+    st.header("Subjects")
+    subjects = ["Python", "Android", "Java", "Computer Netwroks"]
 
-    for material in study_materials:
-        st.markdown(
-            f"""
-            <div class="material-container">
-                <div class="material-title">{material['title']}</div>
-                <div class="material-description">{material['description']}</div>
-            </div>
-            """,
-            unsafe_allow_html=True
-        )
+    selected_subject = st.selectbox("Select a subject", subjects)
 
-    st.markdown("</div>", unsafe_allow_html=True)
+    if selected_subject == "Python":
+        display_Python_material()
+    elif selected_subject == "Android":
+        display_Android_material()
+    elif selected_subject == "Java":
+        display_Java_material()
+    elif selected_subject == "Computer Networks":
+        display_Computer_Networks_material()
 
+def display_Python_material():
+    st.subheader("Python Study Material")
+    st.write("Insert Python study material here.")
+
+def display_Android_material():
+    st.subheader("Android Study Material")
+    st.write("Insert Android study material here.")
+
+def display_Java_material():
+    st.subheader("Java Study Material")
+    st.write("Insert Java study material here.")
+
+def display_Computer_Networks_material():
+    st.subheader("Computer Networks Study Material")
+    st.write("Insert Computer Networks study material here.")
+
+def display_about_page():
+    st.header("About")
+    st.write("This website is created using Streamlit, a popular Python library for building web apps.")
 
 if __name__ == "__main__":
     main()
