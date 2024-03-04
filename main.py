@@ -160,8 +160,8 @@ html_code = """
 </body>
 </html>
 
-"""
+
 if __name__ == "__main__":
     main()
 st.write(html_code, unsafe_allow_html=True)
-
+"""
