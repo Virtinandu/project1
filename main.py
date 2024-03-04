@@ -1,7 +1,6 @@
 import streamlit as st
 
 def main():
-    st.title("Study Material Website")
 
     # Sidebar options
     st.sidebar.title ("Index")
@@ -58,7 +57,7 @@ html_code = """
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f4f4f4;
+            background-color: #FFFFFF;
             margin: 0;
             padding: 0;
         }
@@ -68,7 +67,7 @@ html_code = """
             padding: 20px;
         }
         header {
-            background-color: #333;
+            background-color: #FFFFFF;
             color: #fff;
             text-align: center;
             padding: 30px 0;
@@ -134,8 +133,8 @@ html_code = """
 <body>
     <header>
         <div class="container">
-            <h1>Welcome to Our Creative Website</h1>
-            <p>This is where creativity meets innovation. Explore our amazing features and start your journey with us today!</p>
+            <h1>Welcome to Our Website</h1>
+            <p>We provide study materials</p>
             <a href="#" class="cta-button">Get Started</a>
         </div>
     </header>
